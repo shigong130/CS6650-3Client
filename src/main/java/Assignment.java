@@ -30,18 +30,9 @@ public class Assignment {
 
     public static void main(String[] args){
 
+        String gcp = "https://zeta-resource-259322.appspot.com";
 
-
-        //Assignment obj = new Assignment(32, 64, "http://localhost:8080/SkiResortsServer_war_exploded/");
-        //String local="http://localhost:8080/SkiResortsServer_war_exploded/";
-        //String ec2="http://52.23.184.215:8080/SkiResortsServer_war_exploded/";
-        //String ec2_2="http://18.208.162.31:8080/distributedSystemClass_war/";
-        String ec2_3="http://3.87.48.236:8080/distributedSystemClass_war/";
-
-        //String lbFinal = "http://lbfinal-1228345782.us-east-1.elb.amazonaws.com/distributedSystemClass_war/";
-
-
-        Assignment obj = new Assignment(64, 20000, 20, 40, ec2_3);
+        Assignment obj = new Assignment(256, 20000, 20, 40, gcp);
         obj.runAssignment();
     }
 
@@ -220,15 +211,12 @@ public class Assignment {
 
         long start = map.keySet().iterator().next();
         for(Long key : map.keySet()){
-            System.out.println((key-start)+" : "+getAverage(map.get(key)));
+            System.out.println((key-start)+","+getAverage(map.get(key)));
         }
         System.out.println();
-        for(Long key : map.keySet()){
-            System.out.println((key-start)+" : "+getTp99(map.get(key)));
-        }
         System.out.println();
         for(Long key : map.keySet()){
-            System.out.println((key-start)+" : "+ map.get(key).size());
+            System.out.println((key-start)+","+ map.get(key).size());
         }
 
 //            long start = map.keySet().iterator().next();
